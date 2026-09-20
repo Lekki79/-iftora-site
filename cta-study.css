@@ -1,0 +1,24 @@
+/* Technical callout: a translating terminal, no radial pulse or scale animation. */
+html[data-cta] .copy #contact{height:54px;min-height:54px;padding:0;border:0;background:transparent;color:#123b50;font:500 18px/1.3 Tahoma,Arial,sans-serif!important;letter-spacing:0!important;isolation:isolate;touch-action:manipulation;top:40px}
+html[data-cta] #contact::before,html[data-cta] #contact::after{content:none}
+html[data-cta] #contact:active{transform:none}
+html[data-cta] #contact .cta-text{position:absolute;z-index:2;white-space:nowrap;left:18px;top:7px;padding:0 8px 5px 0;background:linear-gradient(90deg,#edf8fbf2,#edf8fbb8 80%,#edf8fb00)}
+.cta-mechanism{position:absolute;inset:0;pointer-events:none}
+html[data-cta] #contact .cta-mechanism svg{width:100%;height:100%;overflow:visible;fill:none;stroke:#37879c;stroke-width:1.4}
+html[data-cta] #contact:focus-visible{outline:2px solid #087998;outline-offset:6px}
+.callout-line{transition:stroke .2s,stroke-width .2s}
+.callout-node{fill:#c2e7ef;stroke:#17627e;transition:fill .18s}
+.node-axis{opacity:.65}
+/* The circle stays fixed. A segment extends from its centre along the guide. */
+.terminal{transform:none}
+.endpoint-extension{stroke:#126e89;stroke-width:2;transform-box:view-box;transform-origin:266px 17px;transform:scaleX(0);animation:segment-idle 5.4s ease-in-out infinite}
+@keyframes segment-idle{0%,77%,100%{transform:scaleX(0)}87%,91%{transform:scaleX(1)}}
+@keyframes segment-hover{0%{transform:scaleX(0)}65%,100%{transform:scaleX(1.2)}}
+html[data-cta] #contact:is(:hover,:focus-visible) .callout-line{stroke:#126780;stroke-width:1.8}
+html[data-cta] #contact:is(:hover,:focus-visible) .callout-node{fill:#1886a0}
+html[data-cta] #contact:is(:hover,:focus-visible) .endpoint-extension{animation:segment-hover .6s ease-out both}
+html[data-cta] #contact.is-signalling .endpoint-extension{animation:segment-hover .34s ease-out both}
+html[data-cta] #contact:is(:active,.is-locked) .endpoint-extension{animation:none;transform:scaleX(1.1);transition:transform .12s ease-out;stroke:#12445d}
+html[data-cta] #contact:is(:active,.is-locked) .callout-node{fill:#12445d}
+@media(max-width:700px){html[data-cta] .copy #contact{top:32px;font-size:17px!important}}
+@media(prefers-reduced-motion:reduce){html[data-cta] #contact *{animation:none!important;transition:none!important}.endpoint-extension{transform:scaleX(0)!important}}
