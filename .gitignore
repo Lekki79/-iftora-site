@@ -56,3 +56,16 @@
 !/competencies/assets/front.svg
 !/competencies/assets/rear.svg
 !/competencies/assets/side.svg
+
+# Approved process page runtime
+!/process/
+/process/*
+!/process/index.html
+!/process/process.css
+!/process/page.js
+!/process/assets/
+/process/assets/*
+!/process/assets/mechanical.svg
+!/process/assets/optical.svg
+!/process/assets/ring.svg
+!/process/assets/section.svg
