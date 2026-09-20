@@ -43,3 +43,16 @@
 !/about/assets/poster.png
 !/about/assets/iftora-reference-mark.svg
 !/about/assets/IFTORA_About_C125M.glb
+
+# Approved competencies runtime
+!/competencies/
+/competencies/*
+!/competencies/assets/
+/competencies/assets/*
+!/competencies/index.html
+!/competencies/base.css
+!/competencies/competencies.css
+!/competencies/page.js
+!/competencies/assets/front.svg
+!/competencies/assets/rear.svg
+!/competencies/assets/side.svg
