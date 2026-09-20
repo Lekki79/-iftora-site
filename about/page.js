@@ -14,7 +14,7 @@ const process=document.querySelector('#process');
 process.querySelectorAll('li').forEach((item,i)=>item.style.setProperty('--step',i));
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches){process.classList.add('motion-ready');const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){process.classList.add('in-view');observer.disconnect()}},{threshold:.25});observer.observe(process)}
 
-function homeLinks(){document.querySelectorAll('[data-home]').forEach(a=>a.href='../?lang='+document.documentElement.lang)}
+function homeLinks(){document.querySelectorAll('[data-home]').forEach(a=>a.href='../?lang='+document.documentElement.lang);document.querySelectorAll('[data-competencies]').forEach(a=>a.href='../competencies/?lang='+document.documentElement.lang)}
 if(new URLSearchParams(location.search).get('lang')==='en')document.querySelector('[data-lang="en"]').click();
 homeLinks();
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{homeLinks();const u=new URL(location.href);u.searchParams.set('lang',b.dataset.lang);history.replaceState(null,'',u)}));
