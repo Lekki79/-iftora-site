@@ -18,3 +18,5 @@ function homeLinks(){document.querySelectorAll('[data-home]').forEach(a=>a.href=
 if(new URLSearchParams(location.search).get('lang')==='en')document.querySelector('[data-lang="en"]').click();
 homeLinks();
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{homeLinks();const u=new URL(location.href);u.searchParams.set('lang',b.dataset.lang);history.replaceState(null,'',u)}));
+
+function contactLinks(){const language=document.documentElement.lang;document.querySelectorAll('[data-contact-form]').forEach(a=>a.href='../contacts/?lang='+language+'#request-form');document.querySelectorAll('[data-contact-page]').forEach(a=>a.href='../contacts/?lang='+language)}contactLinks();document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',contactLinks));

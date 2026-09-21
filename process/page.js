@@ -18,3 +18,5 @@ const seenMobile=new WeakSet();
 const stageObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const step=entry.target;seenMobile.add(step);step.classList.add('mobile-shown');stageObserver.unobserve(step)}),{threshold:.25});
 function mobileStages(){stageObserver.disconnect();steps.forEach(step=>{step.classList.remove('mobile-pending','mobile-shown');if(!mobileLayout.matches||reduced.matches)return;if(seenMobile.has(step))return;step.classList.add('mobile-pending');stageObserver.observe(step)})}
 mobileStages();mobileLayout.addEventListener('change',mobileStages);reduced.addEventListener('change',mobileStages);
+
+function contactLinks(){const language=document.documentElement.lang;document.querySelectorAll('[data-contact-form]').forEach(a=>a.href='../contacts/?lang='+language+'#request-form');document.querySelectorAll('[data-contact-page]').forEach(a=>a.href='../contacts/?lang='+language)}contactLinks();document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',contactLinks));

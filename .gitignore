@@ -69,3 +69,17 @@
 !/process/assets/optical.svg
 !/process/assets/ring.svg
 !/process/assets/section.svg
+
+# Contacts runtime — local preview
+!/contacts/
+/contacts/*
+!/contacts/index.html
+!/contacts/contacts.css
+!/contacts/config.js
+!/contacts/page.js
+!/contacts/form.js
+!/contacts/assets/
+/contacts/assets/*
+!/contacts/assets/mechanical.svg
+!/contacts/assets/ring.svg
+!/contacts/assets/section.svg
